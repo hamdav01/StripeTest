@@ -6,8 +6,11 @@
 
   <p>
     <strong>Price:</strong>
-    <%= product.price %>
+    <%= number_to_currency(product.price / 100) %>
   </p>
-
+  <p>
+      <strong> Sales count:</strong>
+ <%= product.sales_count %>
+  </p>
   <%= button_to "Buy now!", checkout_create_path, params: {id: product.id}, remote: true %>
 </div>
